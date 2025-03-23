@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+
+<head>
+ <meta charset="utf-8">
+</head>
+<style>
+
+</style>
+<script>
+function f1(ido){
+    ido.style.width="300px";
+    ido.style.height="300px";
+}
+function f2(ido){
+    ido.style.width="200px";
+    ido.style.height="200px";
+}
+function f3(ido){
+    ido.style.border="solid red 10px";
+}
+function f4(ido){
+    ido.style.border="double green";
+}
+function f5(){
+    document.getElementById("tekst1").style.color="red";
+}
+function f6(){
+    document.getElementById("tekst1").style.color="blue";
+}
+function f7(){
+    tekst1.innerHTML="Zmieniłeś wartość pola tekstowego A ";
+}
+function f8(){
+    tekst1.innerHTML="Zmieniłeś wartość pola tekstowego B ";
+}
+function f9(ide){
+ide.style.backgroundColor="red";
+}
+function f10(ide){
+    ide.style.backgroundColor="white" ;
+}
+function f11(ide){
+    ide.style.color="blue";
+}
+function f12(ide){
+    ide.style.color="black";
+}
+function f13(ide){
+    ide.style.backgroundColor="green";
+}
+function f14(){
+    tekst1.innerHTML="wkleiłeś tekst do pola tekstowego C";
+}
+function f15(){
+    tekst1.innerHTML="Nie wolno kopiować";
+}
+function f16(){
+    info.innerHTML="rozpoczeto odtwarzanie";
+    document.getElementById("film").style.border="solid green 5px";
+}
+function f17(){
+    info.innerHTML="wstrzymano odtwarzanie";
+    document.getElementById("film").style.border="solid red 5px";
+}
+function f18(){
+    info.innerHTML="zakończono odtwarzanie";
+}
+function f19(){
+    info.innerHTML="nie oszukuj";
+    document.getElementById("film").style.border="solid green 5px";
+}
+
+
+</script>
+<body>
+    <video  src="video.mp4" id="film" controls onplay="f16()" onpause="f17()" onended="f18()" onseeked="f19()"></video>
+    <p id="info"></p>
+    <img src="kolo.jpg" id="o1" onmouseup="f5()" onmousedown="f6()" ondblclick="f4(this)" onmouseout="f2(this)" onmouseover="f1(this)" onclick="f3(this)"> <!-- this specjalny rodzaj obiektu, wstawiane jest id obiektu które ma to wpisane-->
+    <img src="kolo.jpg" id="o2" onmouseup="f5()" onmousedown="f6()" ondblclick="f4(this)" onmouseout="f2(this)" onmouseover="f1(this)" onclick="f3(this)">
+    <img src="kolo.jpg" id="o3" onmouseup="f5()" onmousedown="f6()" ondblclick="f4(this)" onmouseout="f2(this)" onmouseover="f1(this)" onclick="f3(this)">
+    <!--onmouseout: jak myszka zjedzie z obiektu 
+    onmouseover: kiedy myszka najedzie na obrazek
+    ondblclick: podwójne klikniecie 
+    onmouseup: podniesienie przycisku myszy 
+    onmousedown: przyciśnięcie przycisku myszy
+    -->
+    <hr>
+    <p id="tekst1" oncopy="f15()"> Powiatowy zespół szkół w świebodzinie</p>
+    <br><br>
+    Wpisz tekst A <input type="text" id="tekstA" onchange="f7()" onfocus="f9(this)" onblur="f10(this)" onkeydown="f11(this)" onkeyup="f12(this)"><br>
+    Wpisz tekst  B<input type="text" id="tekstB" onchange="f8()" onfocus="f9(this)" onblur="f10(this)" onkeydown="f11(this)" onkeyup="f12(this)"><br>
+    Wpisz tekst C <input type="text" id="tekstC" onkeypress="f13(this)" onpaste="f14()">
+    <!--
+    onfocus: przy uzyskaniu focusu 
+    onblur: po straceniu focusu/ wyjsciu z pola
+    -->
+    <br>
+    <select id="sell" onfocus="f9(this)" onblur="f10(this)">
+        <option> Ala</option>
+        <option> ola</option>
+        <option> ela</option>
+        <option> jola</option>
+    </select>
+</body>
+</html>
